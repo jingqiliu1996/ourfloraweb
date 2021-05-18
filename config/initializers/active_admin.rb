@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = @setting.name
+  config.site_title = "<%= @setting.name %>"
 
   # Set the multipart limit so large forms don't crash
   Rack::Utils.multipart_part_limit = 0
