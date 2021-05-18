@@ -10,6 +10,6 @@ class CreateSetting < ActiveRecord::Migration
 
     # Create a single row for the about page content
     # Setting.create!(:about_page_content => 'Test Content')
-    Setting.create!(:name => 'Ourflora', :lat => 'lat', :lon => 'lon')
+    Setting.create!(:name => 'Ourflora', :lat => '-33.886204', :lon => '151.189005')
   end
 end 
