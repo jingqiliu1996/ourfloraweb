@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = proc { I18n.t("active_admin.species.title") }
+  config.site_title = "OurFlora"
 #species_controller
   # Set the multipart limit so large forms don't crash
   Rack::Utils.multipart_part_limit = 0
