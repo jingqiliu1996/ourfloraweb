@@ -15,11 +15,11 @@ html {
       position: absolute;
       left: 10px;
       top: 10px;
-      padding: 8px;
+      // padding: 8px;
       z-index: 2;
-      @include roundCornerAll(8px);
-      @include backgroundHover(#F84528);
-      @include backgroundClick(#F84528);
+      // @include roundCornerAll(8px);
+      // @include backgroundHover(#F84528);
+      // @include backgroundClick(#F84528);
       @include fullTransition(0.2s);
 
       &:active {
