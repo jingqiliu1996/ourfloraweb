@@ -1,7 +1,7 @@
 class CreateSetting < ActiveRecord::Migration
   def change
     create_table :settings do |t|
-      t.text :about_page_content
+      t.text :name
       # t.decimal  :lat
       # t.decimal  :lon
       t.decimal :lat, {:precision=>10, :scale=>6}
@@ -10,6 +10,6 @@ class CreateSetting < ActiveRecord::Migration
 
     # Create a single row for the about page content
     # Setting.create!(:about_page_content => 'Test Content')
-    Setting.create!(:about_page_content => 'test content', :lat => 'lat', :lon => 'lon')
+    Setting.create!(:name => 'Ourflora', :lat => 'lat', :lon => 'lon')
   end
 end 
