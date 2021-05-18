@@ -1,9 +1,10 @@
 ActiveAdmin.register Setting do
   permit_params :name, :lat,:lon
-  # actions :all, :except => [:destroy]
+  actions :all, :except => [:destroy]
 
-  # # Prevent a new resource from being created, we can only edit this one row
-  # config.clear_action_items!
+  # Prevent a new resource from being created, we can only edit this one row
+  config.clear_action_items!
+
 
   # show do |setting|
   #   # Initialize a markdown parser
