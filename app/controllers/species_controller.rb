@@ -36,6 +36,7 @@ class SpeciesController < ApplicationController
         # Grab the about page content to render
         @page_content = PageContent.first
         @setting = Setting.first
+        @title = Setting.first.name
         render 'map/index'
       }
     end
