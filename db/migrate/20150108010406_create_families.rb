@@ -6,3 +6,4 @@ class CreateFamilies < ActiveRecord::Migration
     end
   end
 end
+ 
