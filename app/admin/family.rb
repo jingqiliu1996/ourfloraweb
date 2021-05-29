@@ -7,7 +7,7 @@ ActiveAdmin.register Family do
         Family.connection.execute("DELETE FROM families WHERE name IN (SELECT name FROM families GROUP BY name HAVING COUNT(name)>1)")
         
       end
-  },
+  }
 
   controller do
     def index
