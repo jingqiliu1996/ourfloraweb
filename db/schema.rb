@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.decimal  "lat",                 precision: 10, scale: 6
     t.decimal  "lon",                 precision: 10, scale: 6
   end
- #end copy
+ #end 
   create_table "families", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
