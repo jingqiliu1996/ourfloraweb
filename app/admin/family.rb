@@ -1,6 +1,10 @@
 ActiveAdmin.register Family do
   permit_params :name, :phylogeny
-  active_admin_import
+  active_admin_import validate: true,
+  template_object: ActiveAdminImport::Model.new(
+      hint: "file will be imported with such header format: 'body','title','author'",
+      csv_headers: ["name","created_at","updated_at"]
+  )
   controller do
     def index
       params[:order] = "name_asc"
