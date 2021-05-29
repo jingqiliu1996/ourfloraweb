@@ -1,10 +1,11 @@
 ActiveAdmin.register Family do
   permit_params :name, :phylogeny
   active_admin_import validate: true,
-  headers_rewrites: { :'created_at' => :created_at},
+  
   template_object: ActiveAdminImport::Model.new(
       hint: "file will be imported with such header format: 'body','title','author'",
-      csv_headers: ["name","created_at","updated_at"]
+      csv_headers: ["name","created_at","updated_at"],
+      headers_rewrites: { :'created_at' => :created_at},
   )
   controller do
     def index
