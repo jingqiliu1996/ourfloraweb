@@ -4,7 +4,7 @@ ActiveAdmin.register Family do
   
   template_object: ActiveAdminImport::Model.new(
       hint: "file will be imported with such header format: 'body','title','author'",
-      csv_headers: ["name","created_at","updated_at"],
+      csv_headers: ["name"],
   )
   controller do
     def index
