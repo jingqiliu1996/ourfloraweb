@@ -4,7 +4,7 @@ ActiveAdmin.register Family do
   active_admin_import on_duplicate_key_ignore: true,
                       template_object: ActiveAdminImport::Model.new(
                         hint: "file will be imported with such header format: 'body','title','author'",
-                        csv_headers: ["name"]
+                        csv_headers: ["name","created_at","updated_at"]
                     ),
                     after_import:  ->(importer){
                       Family.transaction do
