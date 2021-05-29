@@ -1,6 +1,6 @@
 ActiveAdmin.register Family do
   permit_params :name, :phylogeny
-
+  active_admin_import
   controller do
     def index
       params[:order] = "name_asc"
