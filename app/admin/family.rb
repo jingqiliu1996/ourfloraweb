@@ -1,6 +1,7 @@
 ActiveAdmin.register Family do
   permit_params :name, :phylogeny
-  active_admin_importable
+  # active_admin_importable
+  active_admin_import on_duplicate_key_ignore: true
   controller do
     def index
       params[:order] = "name_asc"
