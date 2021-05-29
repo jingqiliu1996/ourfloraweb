@@ -8,10 +8,7 @@ ActiveAdmin.register Family do
         
       end
   },
-  template_object: ActiveAdminImport::Model.new(
-      hint: "file will be imported with such header format: 'body','title','author'",
-      csv_headers: ["name"],
-  )
+
   controller do
     def index
       params[:order] = "name_asc"
