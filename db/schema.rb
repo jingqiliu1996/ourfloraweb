@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.string   "phylogeny",  limit: 255
   end
 
+  # add_index "families", ["name"], name: "index_families_on_name", unique: true, using: :btree
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
     t.integer  "sluggable_id",   limit: 4,   null: false
@@ -102,11 +104,12 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.text     "description",    limit: 65535
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.integer  "family_id",      limit: 4
+    # t.integer  "family_id",      limit: 4
+    t.string   "family_name"
     t.string   "slug",           limit: 255
   end
 
-  add_index "species", ["family_id"], name: "index_species_on_family_id", using: :btree
+  # add_index "species", ["family_id"], name: "index_species_on_family_id", using: :btree
   add_index "species", ["genusSpecies"], name: "index_species_on_genusSpecies", using: :btree
 
   create_table "species_location_trails", force: :cascade do |t|
