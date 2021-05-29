@@ -4,7 +4,7 @@ ActiveAdmin.register Species do
   active_admin_import validate: true,
   template_object: ActiveAdminImport::Model.new(
                 hint: "file will be imported with such header format: 'body','title','author'",
-                csv_headers: ["description","authority","commonName"]
+                csv_headers: ["description","authority","common"]
             )
               # headers_rewrites: { :'name' => :family_id },
               # before_batch_import: ->(importer) {
