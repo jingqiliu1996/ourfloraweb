@@ -1,13 +1,12 @@
 ActiveAdmin.register Family do
   permit_params :name, :phylogeny
   active_admin_import validate: true,
-  active_admin_import on_duplicate_key_ignore: true,
-    after_import:  ->(importer){
-      Family.transaction do
-        Family.connection.execute("DELETE FROM families WHERE name IN (SELECT name FROM families GROUP BY name HAVING COUNT(name)>1)")
-        
-      end
-  }
+  active_admin_import on_duplicate_key_ignore: true
+  #   after_import:  ->(importer){
+  #     Family.transaction do
+  #       Family.connection.execute("DELETE FROM families WHERE name IN (SELECT name FROM families GROUP BY name HAVING COUNT(name)>1)")
+  #     end
+  # }
 
   controller do
     def index
