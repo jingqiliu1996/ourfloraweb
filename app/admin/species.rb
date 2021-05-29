@@ -1,7 +1,11 @@
 ActiveAdmin.register Species do
   permit_params :commonName, :authority, :distribution, :indigenousName, :information, :genusSpecies, :description, :family_id, :slug, species_locations_attributes: [:lat, :lon, :arborplan_id, :information, :removed, :id, :_destroy], images_attributes: [:image, :id, :creator, :copyright_holder, :_destroy]
   remove_filter :species_location_trails
-  active_admin_import validate: true
+  active_admin_import validate: true,
+  template_object: ActiveAdminImport::Model.new(
+                hint: "file will be imported with such header format: 'body','title','author'",
+                csv_headers: ["description","genusSpecies","authority","commonName"]
+            )
               # headers_rewrites: { :'name' => :family_id },
               # before_batch_import: ->(importer) {
               #   name = importer.values_at(:family_id)
