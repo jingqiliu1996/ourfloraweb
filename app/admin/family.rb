@@ -5,7 +5,13 @@ ActiveAdmin.register Family do
   template_object: ActiveAdminImport::Model.new(
       hint: "file will be imported with such header format: 'body','title','author'",
       csv_headers: ["name","created_at","updated_at"],
-      headers_rewrites: { :'created_at' => :created_at},
+      # headers_rewrites: { :'created_at' => :timestamps},
+      before_batch_import: ->(importer) {
+                created_at = importer.values_at(:timestamps),
+
+
+                importer.batch_replace(:created_at, Time.now)
+              }
   )
   controller do
     def index
