@@ -4,7 +4,11 @@ ActiveAdmin.register Family do
         on_duplicate_key_ignore: true,
       after_import:  ->(importer){
         Family.transaction do
-          Family.connection.execute("select name from families group by name")
+          Family.connection.execute("delete from families where id in (select id from (select id from families where name in 
+
+(select name from families group by name having count(expect)>1) and id not in
+
+(select min(id) from families group by name having count(expect)>1)) as tmpresult)")
         end
     }
 
