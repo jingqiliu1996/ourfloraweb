@@ -7,10 +7,10 @@ ActiveAdmin.register Family do
       csv_headers: ["name","created_at","updated_at"],
       # headers_rewrites: { :'created_at' => :timestamps},
       before_batch_import: ->(importer) {
-                created_at = importer.values_at(:timestamps),
+                created_at = importer.values_at('created_at'),
 
 
-                importer.batch_replace(:created_at, Time.now)
+                importer.batch_replace(created_at, Time.now)
               }
   )
   controller do
