@@ -4,6 +4,5 @@ class CreateFamilies < ActiveRecord::Migration
       t.string :name
       t.timestamps null: false
     end
-    # add_index :families, :name,                unique: true
   end
 end
