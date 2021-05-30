@@ -8,7 +8,7 @@ class CreateSpeciesAndImages < ActiveRecord::Migration
       t.text :distribution
       t.text :information
       t.text :description
-      t.timestamps null: false
+      t.timestamps default: DateTime.now,null: false
 
       t.references :family
     end

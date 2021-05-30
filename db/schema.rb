@@ -100,8 +100,8 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.text     "distribution",   limit: 65535
     t.text     "information",    limit: 65535
     t.text     "description",    limit: 65535
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",      default: DateTime.now,             null: false
+    t.datetime "updated_at",     default: DateTime.now,              null: false
     t.integer  "family_id",      limit: 4
     t.string   "slug",           limit: 255
   end
