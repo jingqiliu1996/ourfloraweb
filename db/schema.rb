@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.datetime "updated_at",     default: DateTime.now,              null: false
     t.integer  "family_id",      limit: 4
     t.string   "slug",           limit: 255
-    t.tring    "name",           limit: 255
+    t.tring    "familyname",           limit: 255
   end
 
   add_index "species", ["family_id"], name: "index_species_on_family_id", using: :btree
