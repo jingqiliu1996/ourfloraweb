@@ -5,7 +5,7 @@ ActiveAdmin.register Species do
   after_import:  ->(importer){
     Species.transaction do
       Species.connection.execute("update species inner join families on species.familyname=families.name set species.family_id=families.id")
-      Species.connection.execute("insert into species_locations (species_id,lat,lon) values(select (id,lat,lon)  from species)")
+      Species.connection.execute("insert into species_locations (species_id,lat,lon) values(select id,lat,lon from species)")
       end
     }
 
