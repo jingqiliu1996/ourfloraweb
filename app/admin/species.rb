@@ -4,7 +4,10 @@ ActiveAdmin.register Species do
   active_admin_import validate: true,
               headers_rewrites: { :'familyname' => :family_id },
               before_batch_import: ->(importer) {
-                family_names = importer.values_at(:family_id)
+                def values_at(header_key)
+                  import.csv_lines.collect { |line| line[header_index(header_key)] }.uniq
+                end
+                family_names = values_at(:family_id)
                 # replacing author name with author id
                 families   = Family.where(name: family_names).pluck(:name, :id)
                 options = Hash[*families.flatten] # #{"Jane" => 2, "John" => 1}
