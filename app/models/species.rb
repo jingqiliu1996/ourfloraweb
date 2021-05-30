@@ -2,7 +2,7 @@ class Species < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
   extend FriendlyId
 
-  friendly_id :genusSpecies, use: :slugged
+  friendly_id :genusspecies, use: :slugged
 
   after_save :expire_cache
 
@@ -28,6 +28,6 @@ class Species < ActiveRecord::Base
   end
 
   def display_name
-    genusSpecies
+    genusspecies
   end
 end

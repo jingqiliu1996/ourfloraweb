@@ -1,8 +1,8 @@
-class AddGenusSpeciesToImage < ActiveRecord::Migration
+class AddgenusspeciesToImage < ActiveRecord::Migration
   def change
-    add_column :images, :genusSpecies, :string
+    add_column :images, :genusspecies, :string
     Image.all.each do |image|
-      image.genusSpecies = image.species.genusSpecies
+      image.genusspecies = image.species.genusspecies
       image.save!
     end
   end

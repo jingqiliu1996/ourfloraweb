@@ -1,8 +1,8 @@
 class CreateSpeciesAndImages < ActiveRecord::Migration
   def change
     create_table :species do |t|
-      t.string :genusSpecies
-      t.string :commonName
+      t.string :genusspecies
+      t.string :commonname
       t.string :indigenousName
       t.string :authority
       t.text :distribution

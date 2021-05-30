@@ -1,8 +1,8 @@
 json.cache! 'species_index_json' do
   json.array! @species do |species|
     json.id species.id
-    json.genusSpecies species.genusSpecies
-    json.commonName species.commonName
+    json.genusspecies species.genusspecies
+    json.commonname species.commonname
     json.indigenousName species.indigenousName
     json.authority species.authority
     json.distribution species.distribution

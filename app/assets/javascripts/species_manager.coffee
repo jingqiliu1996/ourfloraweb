@@ -108,8 +108,8 @@
         # Initialize the share widget
         new Share ".share-button",
           url: "campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
-          title: "#{self.model.get('genusSpecies')}"
-          description: "#{self.model.get('genusSpecies')} @campusflora - campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
+          title: "#{self.model.get('genusspecies')}"
+          description: "#{self.model.get('genusspecies')} @campusflora - campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
           ui:
             button_text: 'Share'
           networks:
@@ -118,7 +118,7 @@
             pinterest:
               enabled: false
             twitter:
-              description: "I found #{self.model.get('genusSpecies')} on campus! via @CampusFloraOz campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
+              description: "I found #{self.model.get('genusspecies')} on campus! via @CampusFloraOz campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
         # Bind photoswipe on the image gallery
         if self.model.get('images').length > 0
           bindPhotoSwipe '.images'
@@ -193,8 +193,8 @@
         # Initialize the share widget
         new Share ".share-button",
           url: "campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
-          title: "#{self.model.get('genusSpecies')}"
-          description: "#{self.model.get('genusSpecies')} @campusflora - campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
+          title: "#{self.model.get('genusspecies')}"
+          description: "#{self.model.get('genusspecies')} @campusflora - campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
           ui:
             button_text: 'Share'
           networks:
@@ -203,7 +203,7 @@
             pinterest:
               enabled: false
             twitter:
-              description: "I found #{self.model.get('genusSpecies')} on campus! via @CampusFloraOz campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
+              description: "I found #{self.model.get('genusspecies')} on campus! via @CampusFloraOz campusflora.sydneybiology.org/species/#{self.model.get('slug')}"
         # Bind photoswipe on the image gallery
         if self.model.get('images').length > 0
           bindPhotoSwipe '.images'
@@ -245,7 +245,7 @@
       @marker = new google.maps.Marker(
         position: new google.maps.LatLng(@model.get('lat'), @model.get('lon'));
         map: _map
-        title: @parentModel.get('genusSpecies')
+        title: @parentModel.get('genusspecies')
       )
 
       @marker.attributes = @model.attributes
@@ -763,8 +763,8 @@
     # Specify fields to search with Lunr full text search
     lunroptions:
       fields: [
-          { name: "genusSpecies", boost: 10 }
-          { name: "commonName", boost: 5 }
+          { name: "genusspecies", boost: 10 }
+          { name: "commonname", boost: 5 }
       ]
 
     comparator: (model) ->

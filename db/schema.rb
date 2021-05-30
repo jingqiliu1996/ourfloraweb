@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.integer  "species_id",         limit: 4
-    t.string   "genusSpecies",       limit: 255
+    t.string   "genusspecies",       limit: 255
     t.text     "image_meta",         limit: 65535
     t.string   "creator",            limit: 255
     t.string   "copyright_holder",   limit: 255
@@ -93,8 +93,8 @@ ActiveRecord::Schema.define(version: 20170406052832) do
   end
 
   create_table "species", force: :cascade do |t|
-    t.string   "genusSpecies",   limit: 255
-    t.string   "commonName",     limit: 255
+    t.string   "genusspecies",   limit: 255
+    t.string   "commonname",     limit: 255
     t.string   "indigenousName", limit: 255
     t.string   "authority",      limit: 255
     t.text     "distribution",   limit: 65535
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20170406052832) do
   end
 
   add_index "species", ["family_id"], name: "index_species_on_family_id", using: :btree
-  add_index "species", ["genusSpecies"], name: "index_species_on_genusSpecies", using: :btree
+  add_index "species", ["genusspecies"], name: "index_species_on_genusspecies", using: :btree
 
   create_table "species_location_trails", force: :cascade do |t|
     t.integer  "species_location_id", limit: 4

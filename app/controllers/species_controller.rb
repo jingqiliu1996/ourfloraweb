@@ -29,7 +29,7 @@ class SpeciesController < ApplicationController
         @trails = Trail.includes(:species_locations).all
         @trails = @trails.to_json(include: [:species_locations => {:only => [:id, :lat, :lon]}])
 
-        @page_title = @species_selected.genusSpecies
+        @page_title = @species_selected.genusspecies
 
         # Initialise a markdown parser that we can use in the view to well, parse markdown
         @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)

@@ -38,14 +38,14 @@ ActiveAdmin.register Image do
     column :image_file_name
     column :image_content_type
     column :image_file_size
-    column :genusSpecies
+    column :genusspecies
     column :creator
     column :copyright_holder
     actions
   end
 
   # Define which filters (search criteria) should be available and in what order
-  filter :species, as: :select, collection: Species.all.order('genusSpecies')
+  filter :species, as: :select, collection: Species.all.order('genusspecies')
   filter :image_file_name
   filter :image_content_type
   filter :image_file_size

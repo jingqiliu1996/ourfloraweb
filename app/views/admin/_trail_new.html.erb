@@ -130,7 +130,7 @@
     }
 
     function addSpeciesToTrail (marker, attributes) {
-      var listItem = $('<div class="point"><i class="lnr lnr-menu"></i><div class="text">' + attributes.genusSpecies + ' ' + attributes.arborplan_id + '</div><div class="action-buttons"><div class="button-delete">X</div></div></div>')
+      var listItem = $('<div class="point"><i class="lnr lnr-menu"></i><div class="text">' + attributes.genusspecies + ' ' + attributes.arborplan_id + '</div><div class="action-buttons"><div class="button-delete">X</div></div></div>')
       var hiddenInputId = $('<input type="hidden" class="hidden-input-id" name="trail[species_location_trails_attributes][' + points.length + '][species_location_id]" value="' + attributes.id + '">')
       var hiddenInputOrder = $('<input type="hidden" class="hidden-input-order" name="trail[species_location_trails_attributes][' + points.length + '][order]" value="' + points.length + '">')
 
