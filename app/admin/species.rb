@@ -1,16 +1,15 @@
 ActiveAdmin.register Species do
   permit_params :commonname, :authority, :distribution, :indigenousName, :information, :genusspecies, :description, :family_id, :slug, species_locations_attributes: [:lat, :lon, :arborplan_id, :information, :removed, :id, :_destroy], images_attributes: [:image, :id, :creator, :copyright_holder, :_destroy]
   remove_filter :species_location_trails
-  active_admin_import validate: true
-
-              # headers_rewrites: { :'name' => :family_id },
-              # before_batch_import: ->(importer) {
-              #   name = importer.values_at(:family_id)
-              #   # replacing author name with author id
-              #   families   = Family.where(name: name).pluck(:name, :id)
-              #   options = Hash[*families.flatten] # #{"Jane" => 2, "John" => 1}
-              #   importer.batch_replace(:family_id, options)
-              # }
+  active_admin_import validate: true,
+              headers_rewrites: { :'family name' => :family_id },
+              before_batch_import: ->(importer) {
+                family_names = importer.values_at(:family_id)
+                # replacing author name with author id
+                families   = Family.where(name: family_names).pluck(:name, :id)
+                options = Hash[*families.flatten] # #{"Jane" => 2, "John" => 1}
+                importer.batch_replace(:family_id, options) #replacing "Jane" with 1, etc
+              }
 
   # Override find resource to get the select species by the friendly slug, rather than int id
   controller do
