@@ -5,7 +5,7 @@ ActiveAdmin.register Species do
               headers_rewrites: { :'familyname' => :family_id },
               before_batch_import: ->(importer) {
                 def values_at(header_key)
-                  import.csv_lines.collect { |line| line[header_index(header_key)] }.uniq
+                  csv_lines.collect { |line| line[header_index(header_key)] }.uniq
                 end
                 family_names = values_at(:family_id)
                 # replacing author name with author id
