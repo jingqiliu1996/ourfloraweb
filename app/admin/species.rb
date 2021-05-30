@@ -3,9 +3,9 @@ ActiveAdmin.register Species do
   remove_filter :species_location_trails
   active_admin_import validate: true,
   after_import:  ->(importer){
-        Family.transaction do
-          Family.connection.execute("update species inner join (select name, family.id from family)tmp on species.name=tmp.name set family.id=tmp.family_id")
-        end
+    Species.transaction do
+      Species.connection.execute("update species inner join (select name, family.id from family)tmp on species.name=tmp.name set family.id=tmp.family_id")
+      end
     }
 
 
