@@ -4,7 +4,7 @@ ActiveAdmin.register Species do
   active_admin_import validate: true,
   after_import:  ->(importer){
     Species.transaction do
-      Species.connection.execute("update species inner join (select name, families.id from families)tmp on species.familyname=tmp.name set species.family_id=tmp.families.id")
+      Species.connection.execute("update species inner join families on species.familyname=families.name set species.family_id=families.id")
       end
     }
 
