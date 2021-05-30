@@ -9,6 +9,8 @@ class CreateSpeciesAndImages < ActiveRecord::Migration
       t.text :information
       t.text :description
       t.string :familyname
+      t.decimal :lat, {:precision=>10, :scale=>6}
+      t.decimal :lon, {:precision=>10, :scale=>6}
       t.timestamps default: DateTime.now,null: false
 
       t.references :family

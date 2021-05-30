@@ -1,5 +1,5 @@
 ActiveAdmin.register Species do
-  permit_params :commonname, :familyname, :authority, :distribution, :indigenousName, :information, :genusspecies, :description, :family_id, :slug, species_locations_attributes: [:lat, :lon, :arborplan_id, :information, :removed, :id, :_destroy], images_attributes: [:image, :id, :creator, :copyright_holder, :_destroy]
+  permit_params :commonname, :lat, :lon,:familyname, :authority, :distribution, :indigenousName, :information, :genusspecies, :description, :family_id, :slug, species_locations_attributes: [:lat, :lon, :arborplan_id, :information, :removed, :id, :_destroy], images_attributes: [:image, :id, :creator, :copyright_holder, :_destroy]
   remove_filter :species_location_trails
   active_admin_import validate: true,
   after_import:  ->(importer){

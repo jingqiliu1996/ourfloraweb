@@ -104,7 +104,9 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.datetime "updated_at",     default: DateTime.now,              null: false
     t.integer  "family_id",      limit: 4
     t.string   "slug",           limit: 255
-    t.tring    "familyname",           limit: 255
+    t.string    "familyname",           limit: 255
+    t.decimal  "lat",                        precision: 10, scale: 6
+    t.decimal  "lon",                        precision: 10, scale: 6
   end
 
   add_index "species", ["family_id"], name: "index_species_on_family_id", using: :btree
@@ -122,8 +124,8 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.integer  "species_id",   limit: 4
     t.decimal  "lat",                        precision: 10, scale: 6
     t.decimal  "lon",                        precision: 10, scale: 6
-    t.datetime "created_at",                                                          null: false
-    t.datetime "updated_at",                                                          null: false
+    t.datetime "created_at",     default: DateTime.now,                                                      null: false
+    t.datetime "updated_at",     default: DateTime.now,                                                     null: false
     t.string   "arborplan_id", limit: 255
     t.boolean  "removed",      limit: 1,                              default: false
     t.datetime "removal_date"
