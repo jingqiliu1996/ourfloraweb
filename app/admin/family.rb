@@ -2,6 +2,7 @@ ActiveAdmin.register Family do
   permit_params :name, :phylogeny
   active_admin_import validate: true,
         on_duplicate_key_ignore: true,
+        timestamps: true,
       after_import:  ->(importer){
         Family.transaction do
           Family.connection.execute("delete from families where id in (select id from (select id from families where name in 
