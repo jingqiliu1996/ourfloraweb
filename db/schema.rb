@@ -100,8 +100,8 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.text     "distribution",   limit: 65535
     t.text     "information",    limit: 65535
     t.text     "description",    limit: 65535
-    t.datetime "created_at",      default: DateTime.now,             null: false
-    t.datetime "updated_at",     default: DateTime.now,              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "family_id",      limit: 4
     t.string   "slug",           limit: 255
     t.string    "familyname",           limit: 255
@@ -124,8 +124,8 @@ ActiveRecord::Schema.define(version: 20170406052832) do
     t.integer  "species_id",   limit: 4
     t.decimal  "lat",                        precision: 10, scale: 6
     t.decimal  "lon",                        precision: 10, scale: 6
-    t.datetime "created_at",     default: DateTime.now,                                                      null: false
-    t.datetime "updated_at",     default: DateTime.now,                                                     null: false
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                        null: false
     t.string   "arborplan_id", limit: 255
     t.boolean  "removed",      limit: 1,                              default: false
     t.datetime "removal_date"
