@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20170406052832) do
  #end 
   create_table "families", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.datetime "created_at",             default: CURRENT_TIMESTAMP, null: false
-    t.datetime "updated_at",             default: CURRENT_TIMESTAMP, null: false
+    t.datetime "created_at",             default: Date.now, null: false
+    t.datetime "updated_at",             default: Date.now, null: false
     t.string   "phylogeny",  limit: 255
   end
 
