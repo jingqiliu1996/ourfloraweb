@@ -9,11 +9,14 @@ rails:
    - mysql
   environment:
    - RAILS_SERVE_STATIC_FILES=true
+  restart: always
 mysql:
   build: .
   dockerfile: ./docker/Dockerfile-mysql
   volumes_from:
    - mysqldata
+  restart: always
 mysqldata:
   build: .
   dockerfile: ./docker/Dockerfile-mysql-data
+  restart: always
