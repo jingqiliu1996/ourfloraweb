@@ -6,7 +6,7 @@ After=docker.service
 Type=oneshot
 RemainAfterExit=yes
 WorkingDirectory=/root/ourfloraweb
-ExecStart=/usr/bin/docker-compose -f /root/ourfloraweb/docker-compose.yml up
+ExecStart=/usr/bin/docker-compose -f /root/ourfloraweb/docker-compose.yml up -d --remove-orphans
 
 [Install]
 WantedBy=multi-user.target
