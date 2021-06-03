@@ -5,7 +5,7 @@ After=docker.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-WorkingDirectory=/home/ec2-user/myapp
+WorkingDirectory=/root/ourfloraweb
 ExecStart=/usr/bin/docker-compose -f /root/ourfloraweb/docker-compose.yml up
 
 [Install]
