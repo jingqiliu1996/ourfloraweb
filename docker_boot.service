@@ -5,8 +5,8 @@ After=docker.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-WorkingDirectory=/root/ourfloraweb
-ExecStart=/usr/bin/docker-compose -f docker-compose.yml up
+WorkingDirectory=/root
+ExecStart=/usr/bin/docker-compose -f ./ourfloraweb/docker-compose.yml up
 
 [Install]
 WantedBy=multi-user.target
